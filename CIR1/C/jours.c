@@ -42,12 +42,8 @@ int main() {
 /*---------------------------------------------*/
 
 	/* Saisie des valeurs */
-	printf("\nEntrez un jour : ");
-	scanf("%d", &jourEntree);
-	printf("Entrez un mois (de 1 à 12) : ");
-	scanf("%d", &mois);
-	printf("Entrez une année : ");
-	scanf("%d", &annee);
+	printf("\nEntrez la date au format jour/mois/année : ");
+	scanf("%d/%d/%d", &jourEntree, &mois, &annee);
 	
 /*----------------------------------------------*/
 /*    Chapitre 3 : "L'erreur de l'inconnu"      */
