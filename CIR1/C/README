@@ -4,3 +4,5 @@ TPs dans leur ordre de création :
 	- sizeof.c
 	- bank.c
 	- jours.c
+	- notes.c
+
