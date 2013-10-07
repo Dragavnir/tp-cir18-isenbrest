@@ -37,7 +37,7 @@ int main() {
 /*      Chapitre 3 : "Le cas nul"      */
 /*-------------------------------------*/
 
-	if(note < NUL) {
+	if(note < NUL) { /* Cas d'erreur : l'utilisateur rentre d'emblée une valeur négative */
 		printf("Arrêt du programme, aucune moyenne calculée...\n\n");
 		return EXIT_SUCCESS;
 	}
