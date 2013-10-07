@@ -19,21 +19,26 @@ int main() {
 	int note;
 	int nb_notes = NUL;
 	int total = NUL;
+	int noteMax = NUL;
+	int noteMin;
 	float moyenne;
 	
 /*-----------------------------------------*/
 /*      Chapitre 2 : "Rester positif"      */
 /*-----------------------------------------*/
 
-	printf("Entrez une note (négative pour arrêter) : ");
+	printf("\nEntrez une note (négative pour arrêter) : ");
 	scanf("%d", &note);
+	/* Affectation des variables noteMin et noteMax */
+	noteMin = note;
+	noteMax = note; 
 	
 /*-------------------------------------*/
 /*      Chapitre 3 : "Le cas nul"      */
 /*-------------------------------------*/
 
 	if(note < NUL) {
-		printf("Arrêt du programme, aucune moyenne calculée...\n");
+		printf("Arrêt du programme, aucune moyenne calculée...\n\n");
 		return EXIT_SUCCESS;
 	}
 /*----------------------------------------------*/
@@ -43,6 +48,14 @@ int main() {
 	while(note >= NUL) { /* Pour toute note non négative (note négative : arrêt du programme) */
 		total = total + note;
 		nb_notes++;
+		
+		if(note > noteMax) {
+			noteMax = note;
+		}
+		if(note < noteMin) {
+			noteMin = note;
+		}
+		
 		printf("Entrez une note (négative pour arrêter) : ");
 		scanf("%d", &note);
 	}
@@ -57,6 +70,6 @@ int main() {
 /*      Chapitre 6 : "I'm making a note here: Huge success!"      */
 /*----------------------------------------------------------------*/
 	
-	printf("La moyenne des %d notes rentrées est %.2f.\n", nb_notes, moyenne);
+	printf("\nLa moyenne des %d notes rentrées est %.2f.\nLa note minimale est %d, la note maximale est %d.\n\n", nb_notes, moyenne, noteMin, noteMax);
 	return EXIT_SUCCESS;
 }
