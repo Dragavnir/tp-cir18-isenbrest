@@ -41,6 +41,7 @@ int main() {
 		printf("Arrêt du programme, aucune moyenne calculée...\n\n");
 		return EXIT_SUCCESS;
 	}
+	
 /*----------------------------------------------*/
 /*      Chapitre 4 : "Travail à la chaîne"      */
 /*----------------------------------------------*/
