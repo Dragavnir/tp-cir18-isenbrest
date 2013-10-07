@@ -28,8 +28,16 @@ int main() {
 	printf("Entrez une note (négative pour arrêter) : ");
 	scanf("%d", &note);
 	
+/*-------------------------------------*/
+/*      Chapitre 3 : "Le cas nul"      */
+/*-------------------------------------*/
+
+	if(note < NUL) {
+		printf("Arrêt du programme, aucune moyenne calculée...\n");
+		return EXIT_SUCCESS;
+	}
 /*----------------------------------------------*/
-/*      Chapitre 3 : "Travail à la chaîne"      */
+/*      Chapitre 4 : "Travail à la chaîne"      */
 /*----------------------------------------------*/
 
 	while(note >= NUL) { /* Pour toute note non négative (note négative : arrêt du programme) */
@@ -40,13 +48,13 @@ int main() {
 	}
 	
 /*------------------------------------------------*/
-/*      Chapitre 4 : "La dernière opération"      */
+/*      Chapitre 5 : "La dernière opération"      */
 /*------------------------------------------------*/
 	
 	moyenne = (float)total/(float)nb_notes;
 	
 /*----------------------------------------------------------------*/
-/*      Chapitre 5 : "I'm making a note here: Huge success!"      */
+/*      Chapitre 6 : "I'm making a note here: Huge success!"      */
 /*----------------------------------------------------------------*/
 	
 	printf("La moyenne des %d notes rentrées est %.2f.\n", nb_notes, moyenne);
