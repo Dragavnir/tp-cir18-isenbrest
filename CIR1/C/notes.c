@@ -19,7 +19,7 @@ int main() {
 	int note;
 	int nb_notes = NUL;
 	int total = NUL;
-	int noteMax = NUL;
+	int noteMax;
 	int noteMin;
 	float moyenne;
 	
