@@ -5,20 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*------------------------------*/
-/*      Table des matières      */
-/*------------------------------*/
-
-#define NUL 0
-
 int main() {
 /*-----------------------------------------*/
 /*      Chapitre 1 : "Partir de zéro"      */
 /*-----------------------------------------*/
 
 	int note;
-	int nb_notes = NUL;
-	int total = NUL;
+	int nb_notes = 0;
+	int total = 0;
 	int noteMax;
 	int noteMin;
 	float moyenne;
@@ -37,7 +31,7 @@ int main() {
 /*      Chapitre 3 : "Le cas nul"      */
 /*-------------------------------------*/
 
-	if(note < NUL) { /* Cas d'erreur : l'utilisateur rentre d'emblée une valeur négative */
+	if(note < 0) { /* Cas d'erreur : l'utilisateur rentre d'emblée une valeur négative */
 		printf("Arrêt du programme, aucune moyenne calculée...\n\n");
 		return EXIT_SUCCESS;
 	}
@@ -46,7 +40,7 @@ int main() {
 /*      Chapitre 4 : "Travail à la chaîne"      */
 /*----------------------------------------------*/
 
-	while(note >= NUL) { /* Pour toute note non négative (note négative : arrêt du programme) */
+	while(note >= 0) { /* Pour toute note non négative (note négative : arrêt du programme) */
 		total = total + note;
 		nb_notes++;
 		
