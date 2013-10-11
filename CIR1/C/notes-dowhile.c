@@ -19,8 +19,8 @@ int main() {
 	int note;
 	int nb_notes = 0;
 	int total = 0;
-	int noteMax = 0;
-	int noteMin = 65535;
+	int noteMax;
+	int noteMin;
 	float moyenne;
 	
 /*----------------------------------------------*/
@@ -34,6 +34,12 @@ int main() {
 		total = total + note;
 		nb_notes++;
 		
+		if(nb_notes == 1) {
+			noteMin = note;
+			noteMax = note;
+			continue;
+		}
+		 
 		if(note > noteMax) {
 			noteMax = note;
 		}
