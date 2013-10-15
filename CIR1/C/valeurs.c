@@ -29,7 +29,7 @@ int main() {
 	for(i = 0; i < n; i++) {
 		scanf("%f", &x);
 		if(i == 0) {
-			printf("La %1ère valeur entrée est %.2f\n", x);
+			printf("La 1ère valeur entrée est %.2f\n", x);
 		}
 		else
 		{
