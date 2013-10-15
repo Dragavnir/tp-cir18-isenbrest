@@ -21,14 +21,20 @@ int main() {
 
 	printf("\nTapez le nombre de valeurs à saisir : ");
 	scanf("%d", &n);
+	printf("\nValeurs (entrez un nombre et appuyez sur Entrée) :\n");
 
 /*-------------------------------------------------------*/
 /*      Chapitre 3 : "Du traitement au cas par cas"      */
 /*-------------------------------------------------------*/
 	for(i = 0; i < n; i++) {
-		printf("Entrez la %de valeur réelle : ", i+1);
 		scanf("%f", &x);
-		
+		if(i == 0) {
+			printf("La %dère valeur entrée est %.2f\n", i+1, x);
+		}
+		else
+		{
+			printf("La %dème valeur entrée est %.2f\n", i+1, x);
+		}
 		somme = somme + x;
 	}
 
@@ -36,6 +42,6 @@ int main() {
 /*      Chapitre 4 : "Le résultat final"      */
 /*--------------------------------------------*/	
 
-	printf("\nLa somme des %d valeurs est %.2f.\n\n", n, somme);
+	printf("\nLa somme des %d valeurs est %.2f\n\n", n, somme);
 	return EXIT_SUCCESS;
 }
