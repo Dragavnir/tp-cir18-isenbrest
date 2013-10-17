@@ -9,7 +9,7 @@
 /*      Chapitre 1 : "One value to rule them all"      */
 /*-----------------------------------------------------*/
 
-#define TAILLE_MAX 5
+#define TAILLE_MAX 5 /* Le programme s'adapte à la valeur prise par TAILLE_MAX */
 
 int main() {
 /*------------------------------------------------------*/
@@ -25,7 +25,7 @@ int main() {
 /*-------------------------------------------------------*/
 
 	printf("\nEntrez %d valeurs entières (pressez entrée après chaque valeur) : \n", TAILLE_MAX);
-	for(i = 0; i < TAILLE_MAX; i++) {
+	for(i = 0; i < TAILLE_MAX; i++) { /* On calcule la somme (pour la moyenne) en même temps qu'on récupère les valeurs entrées */
 		scanf("%d", &tab[i]);
 		somme += tab[i];
 	}
@@ -33,6 +33,7 @@ int main() {
 /*--------------------------------------*/
 /*      Chapitre 4 : "Double sens"      */
 /*--------------------------------------*/
+
 	printf("\n------- AFFICHAGE DANS L'ORDRE -------\n");
 	
 	for(i = 0; i < TAILLE_MAX; i++) {
