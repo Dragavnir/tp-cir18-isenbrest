@@ -27,6 +27,7 @@ int main() {
 	printf("\nEntrez %d valeurs entières (pressez entrée après chaque valeur) : \n", TAILLE_MAX);
 	for(i = 0; i < TAILLE_MAX; i++) {
 		scanf("%d", &tab[i]);
+		somme += tab[i];
 	}
 	
 /*--------------------------------------*/
@@ -47,9 +48,7 @@ int main() {
 /*--------------------------------------------*/
 /*      Chapitre 5 : "Un air de déjà-vu"      */
 /*--------------------------------------------*/
-	for(i = 0; i < TAILLE_MAX; i++) {
-		somme += tab[i];
-	}
+
 	printf("\n------------ MOYENNE : %.2f -----------\n\n", (float)somme/TAILLE_MAX);
 		
 	return EXIT_SUCCESS;
