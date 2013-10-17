@@ -50,7 +50,7 @@ int main() {
 	for(i = 0; i < TAILLE_MAX; i++) {
 		somme += tab[i];
 	}
-	printf("\n------------ MOYENNE : %.2f -----------\n\n", (float)somme/(float)i);
+	printf("\n------------ MOYENNE : %.2f -----------\n\n", (float)somme/TAILLE_MAX);
 		
 	return EXIT_SUCCESS;
 }
