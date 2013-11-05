@@ -63,13 +63,13 @@ int main() {
 
 		if(mois == FEVRIER && ((annee%BISSEXTILE_MULTIPLE1) == MULTIPLE && ((annee%BISSEXTILE_PAS_MULTIPLE) != MULTIPLE || (annee%BISSEXTILE_MULTIPLE2) == MULTIPLE))) { 
 			/* Traitement des années bissextiles */
-			jours = MOIS_BISSEXTILE;
+			jours = MOIS_ENCORE_MOINS_LONG;
 			moisType = 1;
 		}
 
 		else if(mois == FEVRIER) {
 			/* Mois de février hors années bissextiles */
-			jours = MOIS_ENCORE_MOINS_LONG;
+			jours = MOIS_BISSEXTILE;
 			moisType = 0;
 		}
 
@@ -93,7 +93,7 @@ int main() {
 /*    Chapitre 6 : "Agir au jour-le-jour"     */
 /*--------------------------------------------*/
 
-	if((moisType == 0 && jourEntree == MOIS_ENCORE_MOINS_LONG) || (moisType == 1 && jourEntree == MOIS_BISSEXTILE) || (moisType == 2 && jourEntree == MOIS_MOINS_LONG) || (moisType == 3 && jourEntree == MOIS_LONG)) {
+	if((moisType == 0 && jourEntree == MOIS_BISSEXTILE) || (moisType == 1 && jourEntree == MOIS_ENCORE_MOINS_LONG) || (moisType == 2 && jourEntree == MOIS_MOINS_LONG) || (moisType == 3 && jourEntree == MOIS_LONG)) {
 		/* Si le jour entré est à la fin du mois, on le repasse à 1 et on incrémente le mois pour trouver le jour suivant */
 		jourEntree = MOIS_DEBUT;
 		mois++;
