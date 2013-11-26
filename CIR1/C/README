@@ -12,4 +12,8 @@ TPs dans leur ordre de création :
 	- tabchar.c
 	- tabdisp.c		# Sans commentaires "littéraires"
 	- tabstring.c 		# Sans commentaires "littéraires"
+	- envers.c
+	- envers-pointeur.c
+	- lettre-e.c
+	- chiffre-2.c
 	- conjugaison.c

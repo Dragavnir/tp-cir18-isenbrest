@@ -16,7 +16,6 @@ int main() {
 	char pronom[PRONOM_MAX+1];
 	char verbe[VERBE_MAX+1];
 	int nbpronom;
-	short pronominal = 0;
 	
 	printf("Merci d'entrer pronom : ");
 	
