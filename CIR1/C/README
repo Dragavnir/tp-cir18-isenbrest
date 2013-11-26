@@ -10,4 +10,6 @@ TPs dans leur ordre de création :
 	- tableau.c
 	- tableau2.c
 	- tabchar.c
-	- tabdisp.c
+	- tabdisp.c		# Sans commentaires "littéraires"
+	- tabstring.c 		# Sans commentaires "littéraires"
+	- conjugaison.c
