@@ -32,7 +32,7 @@ int main() {
 /*      Chapitre 2 : Un groupe très fermé       */
 /*----------------------------------------------*/
 
-	while(!(!strcmp(pronom, "je") || !strcmp(pronom, "tu") || !strcmp(pronom, "il") || !strcmp(pronom, "elle") || !strcmp(pronom, "on") || !strcmp(pronom, "nous") || !strcmp(pronom, "vous") || !strcmp(pronom, "ils") || !strcmp(pronom, "elles"))) {
+	while(!(!strcmp(pronom, "je") || !strcmp(pronom, "tu") || !strcmp(pronom, "il") || !strcmp(pronom, "elle") || !strcmp(pronom, "on") || !strcmp(pronom, "nous") || !strcmp(pronom, "vous") || !strcmp(pronom, "ils") || !strcmp(pronom, "elles"))) { /* Cas d'erreur : Le pronom est mal entré ou n'existe pas. */
 		printf("Vous n'avez pas entré de pronom, ou celui-ci n'est pas entièrement en minuscules. Merci de recommencer ou tapez 0 pour annuler : ");
 		fgets(pronom, VERBE_MAX+2, stdin);
 		pronom[strlen(pronom)-1] = '\0';
@@ -41,6 +41,7 @@ int main() {
 		}
 	}
 	
+	/* Attribution d'un identifiant en fonction du pronom */
 	if(!strcmp(pronom, "je")) {
 		nbpronom = 1;
 	}
@@ -65,7 +66,7 @@ int main() {
 /*      Chapitre 3 : Chercher l'intrus       */
 /*-------------------------------------------*/
 	
-	while(!(verbe[strlen(verbe)-1] == 'r' && verbe[strlen(verbe)-2] == 'e' && strlen(verbe) >= 4) || !strcmp(verbe, "aller")) {
+	while(!(verbe[strlen(verbe)-1] == 'r' && verbe[strlen(verbe)-2] == 'e' && strlen(verbe) >= 4) || !strcmp(verbe, "aller")) { /* Cas d'erreur : Le pronom est mal entré ou n'existe pas. */
 		printf("Vous n'avez pas entré de verbe du premier groupe ou ce dernier n'est pas à l'infinitif. Merci de recommencer ou tapez 0 pour annuler : ");
 		fgets(verbe, VERBE_MAX+2, stdin);
 		verbe[strlen(verbe)-1] = '\0';
