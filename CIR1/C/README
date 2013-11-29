@@ -1,31 +1,31 @@
 TPs dans leur ordre de création :
 
-	# Notion abordée : notions de bases (fonctions basiques, structures de répétition, de conditions...)
-	- helloworld.c
-	- adresses.c
-	- sizeof.c
-	- bank.c
-	- jours.c
-	- notes.c
-	- notes-dowhile.c
-	- valeurs.c
+# Notion abordée : notions de bases (fonctions basiques, structures de répétition, de conditions...)
+- helloworld.c
+- adresses.c
+- sizeof.c
+- bank.c
+- jours.c
+- notes.c
+- notes-dowhile.c
+- valeurs.c
 
-	# Notion abordée : les tableaux
-	- tableau.c
-	- tableau2.c
-	- tabchar.c
-	- tabdisp.c		
+# Notion abordée : les tableaux
+- tableau.c
+- tableau2.c
+- tabchar.c
+- tabdisp.c		
 
-	# Notion abordée : les chaînes de caractères et les pointeurs
-	- tabstring.c 		# Objectif : Conversion d'une chaîne de caractères (char *) en tableau d'entiers (int) puis traitement
-	- envers.c		# Objectif : Ecrire une chaine de caractères à l'envers
-	- envers-pointeur.c	# Objectif : Même exercice, mais avec des pointeurs
-	- lettre-e.c		# Objectif : Compter le nombre de lettres "e" comprises dans une chaîne de caractères
-	- chiffre-2.c		# Objectif : Même exercice, mais avec l'entier 2
-	- conjugaison.c		# Objectif : Conjugueur automatique pour les verbes réguliers du premier groupe
+# Notion abordée : les chaînes de caractères et les pointeurs
+- tabstring.c 		# Objectif : Conversion d'une chaîne de caractères (char *) en tableau d'entiers (int) puis traitement
+- envers.c		# Objectif : Ecrire une chaine de caractères à l'envers
+- envers-pointeur.c	# Objectif : Même exercice, mais avec des pointeurs
+- lettre-e.c		# Objectif : Compter le nombre de lettres "e" comprises dans une chaîne de caractères
+- chiffre-2.c		# Objectif : Même exercice, mais avec l'entier 2
+- conjugaison.c		# Objectif : Conjugueur automatique pour les verbes réguliers du premier groupe
 
-	# Notion abordée : les fonctions
-	- fonction.c		# Objectif : Calculer le carré et une certaine puissance d'un flottant donné
-	- strlen.c		# Objectif : Reproduire l'action de la fonction strlen
-	- strcpy-pointeurs.c	# Objectif : Reproduire l'action de la fonction strcpy
-	- strcpy-indice.c	# Objectif : Même exercice, mais avec un indice au lieu d'un pointeur
+# Notion abordée : les fonctions
+- fonction.c		# Objectif : Calculer le carré et une certaine puissance d'un flottant donné
+- strlen.c		# Objectif : Reproduire l'action de la fonction strlen
+- strcpy-pointeurs.c	# Objectif : Reproduire l'action de la fonction strcpy
+- strcpy-indice.c	# Objectif : Même exercice, mais avec un indice au lieu d'un pointeur
