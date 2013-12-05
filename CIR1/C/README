@@ -1,20 +1,20 @@
 TPs dans leur ordre de création :
 
 # Notion abordée : notions de bases (fonctions basiques, structures de répétition, de conditions...)
-- helloworld.c
-- adresses.c
-- sizeof.c
-- bank.c
-- jours.c
-- notes.c
-- notes-dowhile.c
-- valeurs.c
+- helloworld.c		# Objectif : Afficher "Hello world" à l'écran
+- adresses.c		# Objectif : Afficher l'adresse d'une variable
+- sizeof.c		# Objectif : Afficher la taille d'une variable ou d'un type de variable
+- bank.c		# Objectif : TP de prêt bancaire utilisant les structures conditionnelles
+- jours.c		# Objectif : Afficher le nombre de jour dans un mois (compte tenu des années bissextiles)
+- notes.c		# Objectif : Afficher la moyenne, et les valeurs extrêmes d'une suite de notes saisies
+- notes-dowhile.c	# Objectif : Même exercice, mais avec un do{}while() au lieu d'un while(){} pour la saisie
+- valeurs.c		# Objectif : Afficher des valeurs saisies, puis leur somme (à l'aide d'un accumulateur)
 
 # Notion abordée : les tableaux
-- tableau.c
-- tableau2.c
-- tabchar.c
-- tabdisp.c		
+- tableau.c		# Objectif : Afficher dans l'ordre, puis dans l'ordre inverse une suite finie d'entiers saisis
+- tableau2.c		# Objectif : Même exercice, mais cette fois l'utilisateur rentre (presque) autant d'entiers qu'il veut
+- tabchar.c		# Objectif : Afficher les entrées communes entre deux tableaux de caractères définis, puis les stocker dans un 3è tableau
+- tabdisp.c		# Objectif : Affichage d'un tableau à deux dimensions défini
 
 # Notion abordée : les chaînes de caractères et les pointeurs
 - tabstring.c 		# Objectif : Conversion d'une chaîne de caractères (char *) en tableau d'entiers (int) puis traitement
@@ -30,3 +30,5 @@ TPs dans leur ordre de création :
 - strcpy-pointeurs.c	# Objectif : Reproduire l'action de la fonction strcpy
 - strcpy-indice.c	# Objectif : Même exercice, mais avec un indice au lieu d'un pointeur
 - swap.c		# Objectif : Créer une fonction qui inverse deux valeurs
+- voyelles.c		# Objectif : Afficher uniquement les voyelles d'une chaine de caractères
+- voyelles-main.c	# Objectif : Même exercice, mais avec l'affichage dans le main()
