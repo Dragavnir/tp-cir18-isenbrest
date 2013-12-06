@@ -32,3 +32,5 @@ TPs dans leur ordre de création :
 - swap.c		# Objectif : Créer une fonction qui inverse deux valeurs
 - voyelles.c		# Objectif : Afficher uniquement les voyelles d'une chaine de caractères
 - voyelles-main.c	# Objectif : Même exercice, mais avec l'affichage dans le main()
+- factorielle.c		# Objectif : Afficher la factorielle d'un entier saisi, avec et sans appel récursif
+- Crypto/		# Objectif : TP portant sur le chiffrement de Cesar, avec initiation aux Makefile (compilation séparée)
