@@ -1,11 +1,12 @@
 #include "crypto.h"
 
 int main() {
+	// Variables contenues dans le squelette annexé à l'énoncé
 	char * name_pc = "ABOLIVIER";
 	char * firstName_pc = "Brendan";
 	char * text1_pc = "CeCI EsT uN BeaU MeSsAGE !";
 	char * text2_pc = "Ave Caesar, moritori te salutant!";
-	char * code3_pc = "ZNVGER PBEORNH, FHE HA NEOER CREPUR, GRANVG RA FBA ORP HA SEBZNTR. ZNVGER ERANEQ CNE Y'BQRHE NYYRPUR, YHV GVAG N CRH CERF PR YNATNTR : RG OBAWBHE ZBAFVRHE QH PBEORNH. DHR IBHF RGRF WBYV! DHR IBHF ZR FRZOYRM ORNH! FNAF ZRAGVE, FV IBGER ENZNTR FR ENCCBEGR N IBGER CYHZNTR IBHF RGRF YRCURAVK QRF UBGRF QR PRF OBVF. N PRF ZBGF YR PBEORNH AR FR FRAG CNF QR WBVR; RG CBHE ZBAGERE FN ORYYR IBVK, VY BHIER HA YNETR ORP YNVFFR GBZORE FN CEBVR. YR ERANEQ F'RA FNVFVG RG QVG : ZBA OBA ZBAFVRHE, NCERAM DHR GBHG SYNGGRHE IVG H QRCRAF QR PRYHV DHV Y'RPBHGR : PRGGR YRPBA INHG OVRA HA SEBZNTR FNAF QBHGR. YR PBEORNH UBAGRHK RG PBASHF WHEN ZNVF HA CRH YHF GNEQ, DH'BA AR Y'L CERAQENVG CYHF.";
+	char * code3_pc = "ZNVGER PBEORNH, FHE HA NEOER CREPUR, GRANVG RA FBA ORP HA SEBZNTR. ZNVGER ERANEQ CNE Y'BQRHE NYYRPUR, YHV GVAG N CRH CERF PR YNATNTR : RG OBAWBHE ZBAFVRHE QH PBEORNH. DHR IBHF RGRF WBYV! DHR IBHF ZR FRZOYRM ORNH! FNAF ZRAGVE, FV IBGER ENZNTR FR ENCCBEGR N IBGER CYHZNTR IBHF RGRF YRCURAVK QRF UBGRF QR PRF OBVF. N PRF ZBGF YR PBEORNH AR FR FRAG CNF QR WBVR; RG CBHE ZBAGERE FN ORYYR IBVK, VY BHIER HA YNETR ORP YNVFFR GBZORE FN CEBVR. YR ERANEQ F'RA FNVFVG RG QVG : ZBA OBA ZBAFVRHE, NCERAM DHR GBHG SYNGGRHE IVG H QRCRAF QR PRYHV DHV Y'RPBHGR : PRGGR YRPBA INHG OVRA HA SEBZNTR FNAF QBHGR. YR PBEORNH UBAGRHK RG PBASHF WHEN ZNVF HA CRH YHF GNEQ, DH'BA AR Y'L CERAQENVG CYHF."; // Alors, OUI, y'a des fautes de frappe, merci gedit qui ne permet pas d'écrire quand on autosave, et moi qui écrivait sans regarder l'écran. Mais osef, c'est juste pour le test, et ça suffit.
 	char * message1_pc = "VERCINGETORIX";
 	char * message2_pc = "En l'occurrence l'imbecillite est un dilemme etymologique !";
 	// Variables partie 2
@@ -19,14 +20,15 @@ int main() {
 	// Variables partie 4
 	float freq_pf[ALPHABET+1];
 	char decode3_pc[strlen(code3_pc)+1];
-	
-	printf("\n*** Programme de %s %s  N1 2013-2014 ***\n", firstName_pc, name_pc);
+		
+	printf("\n*** Programme de %s %s N1 2013-2014 ***\n", firstName_pc, name_pc);
 	
 	printf("\n---------------------- Part 1 ----------------------\n");
 	
 	printf("\nText 1 : \n\n");	
 	printf("%s\tsize = %d\n", text1_pc, (int)strlen(text1_pc));
 	while(*text1_pc != '\0') {
+	// Affichage caractère par caractère
 		printf("%d", testUpperCase(*text1_pc));
 		text1_pc++;
 	}
@@ -36,10 +38,12 @@ int main() {
 	printf("Text 2 : \n\n");
 	printf("%s\tsize = %d\n", text2_pc, (int)strlen(text2_pc));
 	while(*text2_pc != '\0') {
+	// Affichage caractère par caractère
 		printf("%c", lowerToUpper(*text2_pc));
 		text2_pc++;
 	}
 	
+	// Le reste du main() n'étant que de l'affichage et des appels de fonctions, je ne juge pas utile de commenter après cette ligne
 	printf("\n\n");
 	
 	printf("\n---------------------- Part 2 ----------------------\n");
