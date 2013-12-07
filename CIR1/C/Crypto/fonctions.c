@@ -16,6 +16,16 @@ char lowerToUpper(char letter_c) {
 
 /*------------------------------- Partie 2 -------------------------------*/
 void encryption(int key_i, char * text_pc, char * code_pc) {
+
+	while(key_i < -26) { // Si la clé est inférieure à -26
+		key_i = key_i+26;
+		key_i = 26-(-key_i);
+	}
+	
+	while(key_i > 26) { // Si la clé est supérieure à 26
+		key_i = key_i-26;
+	}
+
 	while(*text_pc != '\0') {
 		*code_pc = lowerToUpper(*text_pc);
 		
@@ -37,6 +47,16 @@ void encryption(int key_i, char * text_pc, char * code_pc) {
 /*------------------------------- Partie 3 -------------------------------*/
 void decryption(int key_i, char * code_pc, char * decode_pc) {
 	// Cette fonction est très proche de la précédente. Pour tout dire, j'ai juste changé le nom des variables et remplacé des + par des - (et inversement), sinon c'est du banal copié-collé.
+	
+	if(key_i < -26) { // Si la clé est inférieure à -26
+		key_i = key_i+26;
+		key_i = 26-(-key_i);
+	}
+	
+	if(key_i > 26) { // Si la clé est supérieure à 26
+		key_i = key_i-26;
+	}
+	
 	while(*code_pc != '\0') {
 		*decode_pc = lowerToUpper(*code_pc);
 		
