@@ -8,14 +8,17 @@ int main() {
 	char * code3_pc = "ZNVGER PBEORNH, FHE HA NEOER CREPUR, GRANVG RA FBA ORP HA SEBZNTR. ZNVGER ERANEQ CNE Y'BQRHE NYYRPUR, YHV GVAG N CRH CERF PR YNATNTR : RG OBAWBHE ZBAFVRHE QH PBEORNH. DHR IBHF RGRF WBYV! DHR IBHF ZR FRZOYRM ORNH! FNAF ZRAGVE, FV IBGER ENZNTR FR ENCCBEGR N IBGER CYHZNTR IBHF RGRF YRCURAVK QRF UBGRF QR PRF OBVF. N PRF ZBGF YR PBEORNH AR FR FRAG CNF QR WBVR; RG CBHE ZBAGERE FN ORYYR IBVK, VY BHIER HA YNETR ORP YNVFFR GBZORE FN CEBVR. YR ERANEQ F'RA FNVFVG RG QVG : ZBA OBA ZBAFVRHE, NCERAM DHR GBHG SYNGGRHE IVG H QRCRAF QR PRYHV DHV Y'RPBHGR : PRGGR YRPBA INHG OVRA HA SEBZNTR FNAF QBHGR. YR PBEORNH UBAGRHK RG PBASHF WHEN ZNVF HA CRH YHF GNEQ, DH'BA AR Y'L CERAQENVG CYHF.";
 	char * message1_pc = "VERCINGETORIX";
 	char * message2_pc = "En l'occurrence l'imbecillite est un dilemme etymologique !";
+	// Variables partie 2
 	int key1_i = 3;
 	char code1_pc[strlen(message1_pc)+1];
 	int key2_i = 20;
 	char code2_pc[strlen(message2_pc)+1];
-	
+	// Variables partie 3
 	char decode1_pc[strlen(code1_pc)+1];
 	char decode2_pc[strlen(code2_pc)+1];
-	
+	// Variables partie 4
+	float freq_pf[ALPHABET+1];
+	char decode3_pc[strlen(code3_pc)+1];
 	
 	printf("\n*** Programme de %s %s  N1 2013-2014 ***\n", firstName_pc, name_pc);
 	
@@ -74,6 +77,26 @@ int main() {
 	
 	printf("\nDecode 2 : \n\n");
 	printf("%s\tsize = %d\n", decode2_pc, (int)strlen(decode2_pc));
+	
+	
+	printf("\n\n");
+
+	printf("\n---------------------- Part 4 ----------------------\n");
+	
+	printf("\nCode 3 : \n\n");
+	printf("%s\tsize = %d\n\n", code3_pc, (int)strlen(code3_pc));
+	
+	freqAnalysis(code3_pc, freq_pf);
+	
+	printFreq(freq_pf);
+	
+	printf("\nEstimated key : \n\n");
+	printf("%d\n", computeKey(freq_pf));
+	
+	decryption(computeKey(freq_pf), code3_pc, decode3_pc);
+	
+	printf("\nDecode 3 : \n\n");
+	printf("%s\tsize = %d\n\n", decode3_pc, (int)strlen(decode3_pc));
 
 	return EXIT_SUCCESS;
 }
