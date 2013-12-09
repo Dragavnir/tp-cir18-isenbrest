@@ -82,10 +82,12 @@ void freqAnalysis(char * code_pc, float * tab_pf) {
 	int acc_i = 0;
 	int i = 0;
 	int longueur_i = (int)strlen(code_pc);
-	
+        char * pcode_pc = code_pc;
+
+
 	// Oui, ça fait mélange un peu barbare entre pointeurs et indices, mais c'est le moyen le plus simple que je voie
 	for(i = 0; i < ALPHABET; i++) {
-		char * pcode_pc = code_pc;
+                pcode_pc = code_pc;
 		acc_i = 0;
 		
 		while(*pcode_pc != '\0') { 
