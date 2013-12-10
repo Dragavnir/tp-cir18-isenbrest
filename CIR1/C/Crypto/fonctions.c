@@ -21,7 +21,7 @@ void encryption(int key_i, char * text_pc, char * code_pc) {
 		key_i = key_i+ALPHABET;
 		key_i = ALPHABET-(-key_i);
 	}
-	
+
 	while(key_i > ALPHABET) { // Si la clé est supérieure à 26
 		key_i = key_i-ALPHABET;
 	}
