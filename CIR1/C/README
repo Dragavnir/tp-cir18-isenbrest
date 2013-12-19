@@ -34,3 +34,5 @@ TPs dans leur ordre de création :
 - voyelles-main.c	# Objectif : Même exercice, mais avec l'affichage dans le main()
 - factorielle.c		# Objectif : Afficher la factorielle d'un entier saisi, avec et sans appel récursif
 - Crypto/		# Objectif : TP portant sur le chiffrement de Cesar, avec initiation aux Makefile (compilation séparée)
+			 	     Modification : Utilisation des mallocs
+

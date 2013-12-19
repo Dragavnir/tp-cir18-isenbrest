@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-// Histoire de pas avoir à retenir l'identifiant décimal ASCII de chaque caractère...
+#define LG_MAX 10000
 #define ALPHABET 26
-#define A 65
-#define Z 90
-#define E 69
 
 // Prototypes
 
@@ -18,6 +15,6 @@ void encryption(int, char *, char *);
 // Partie 3
 void decryption(int, char *, char *);
 // Partie 4
-void freqAnalysis(char *, float *);
+float * freqAnalysis(char *);
 void printFreq(float *);
 int computeKey(float *);

@@ -11,15 +11,15 @@ int main() {
 	char * message2_pc = "En l'occurrence l'imbecillite est un dilemme etymologique !";
 	// Variables partie 2
 	int key1_i = 3;
-	char code1_pc[strlen(message1_pc)+1];
+	char code1_pc[LG_MAX+1];
 	int key2_i = 20;
-	char code2_pc[strlen(message2_pc)+1];
+	char code2_pc[LG_MAX+1];
 	// Variables partie 3
-	char decode1_pc[strlen(code1_pc)+1];
-	char decode2_pc[strlen(code2_pc)+1];
+	char decode1_pc[LG_MAX+1];
+	char decode2_pc[LG_MAX+1];
 	// Variables partie 4
-	float freq_pf[ALPHABET+1];
-	char decode3_pc[strlen(code3_pc)+1];
+	float * freq_pf = NULL;
+	char decode3_pc[LG_MAX+1];
 		
 	printf("\n*** Programme de %s %s N1 2013-2014 ***\n", firstName_pc, name_pc);
 	
@@ -90,7 +90,12 @@ int main() {
 	printf("\nCode 3 : \n\n");
 	printf("%s\tsize = %d\n\n", code3_pc, (int)strlen(code3_pc));
 	
-	freqAnalysis(code3_pc, freq_pf);
+	freq_pf = freqAnalysis(code3_pc);
+	
+	if(!freq_pf) {
+		printf("\nPas assez de mémoire pour continuer : Arrêt du programme...\n\n");
+		return EXIT_FAILURE;
+	}
 	
 	printFreq(freq_pf);
 	
