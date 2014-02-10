@@ -6,12 +6,16 @@
 
 #define LG_MAX 30
 
+/*----- Structures -----*/
+
 typedef struct {
-	char *nom;
-	char *prenom;
+	char nom[LG_MAX+2];
+	char prenom[LG_MAX+2];
 	double solde;
 } client;
 
-int saisie(client *donneesClients);
+/*----- Prototypes -----*/
+
+int saisie(client **donneesClients);
 int recherche(char *nom, char *prenom, client *donneesClients, int nbClients);
 void affichage(int id, client *donneesClients);
