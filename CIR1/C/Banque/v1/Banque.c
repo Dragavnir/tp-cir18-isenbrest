@@ -2,7 +2,7 @@
 
 int main() {
 	int method;
-	client *donneesClients = NULL;
+	client *donneesClients = NULL; // Tableau servant à stocker les clients
 	int nbClients = 1;
 	int result;
 	char nomSaisi[LG_MAX+2];
@@ -48,8 +48,7 @@ int main() {
 				printf("\nAu revoir !\n\n");
 				return EXIT_SUCCESS;
 			default: // L'utilisateur a rentré une commande inconnue
-				printf("Sélection incorrecte\n");
-				return EXIT_FAILURE;
+				printf("\nSélection incorrecte\n");
 		}
 	}
 }

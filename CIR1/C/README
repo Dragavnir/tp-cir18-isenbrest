@@ -36,5 +36,10 @@ TPs dans leur ordre de création :
 - Crypto/		# Objectif : TP portant sur le chiffrement de Cesar, avec initiation aux Makefile (compilation séparée)
 			 	     Modification : Utilisation des mallocs
 
-#Notion abordée : les malloc
-- Replica/		# Objectif (to evolve) : Copie d'une chaine dans une autre, et affichage de cette dernière
+# Notion abordée : les malloc
+- Replica/		# Objectif : Copie d'une chaine dans une autre, et affichage de cette dernière
+
+# Notion abordée : les structures
+- Banque/		# Objectif : Simulation de banque :
+			# - v1/ : Saisie + recherche/affichage de client(s)
+			# - v2/ : Mêmes fonctionnalités + retrait et virement
