@@ -19,5 +19,5 @@ typedef struct {
 int saisie(client **donneesClients);
 int recherche(char *nom, char *prenom, client *donneesClients, int nbClients);
 void affichage(int id, client *donneesClients);
-void retrait(int id, float montant, client *donneesClients);
-void virement(int emetteur, int destinataire, float montant, client *donneesClients);
+void retrait(int id, double montant, client *donneesClients);
+void virement(int emetteur, int destinataire, double montant, client *donneesClients);

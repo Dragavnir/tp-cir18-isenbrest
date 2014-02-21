@@ -43,3 +43,6 @@ TPs dans leur ordre de création :
 - Banque/		# Objectif : Simulation de banque :
 			# - v1/ : Saisie + recherche/affichage de client(s)
 			# - v2/ : Mêmes fonctionnalités + retrait et virement
+
+# Notion abordée : Les listes chaînées
+- Listes/		# Objectif : Exercices de saisie en tête et en queue dans des listes chaînées

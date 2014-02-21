@@ -1,5 +1,16 @@
 #include "Banque.h"
 
+/****************************************************************************/
+/*	fonction : saisie()                                                 */
+/*	Permet à l'utilisateur de rentrer des informations sur des clients  */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- donneesClients : Tableau contenant les clients (client *) */
+/*	Sorties :                                                           */
+/*		- i : identifiant du dernier client + 1 (nombre total de    */
+/*			clients) (int)                                      */
+/****************************************************************************/
+
 int saisie(client **pdonneesClients) {
 	client *donneesClients = *pdonneesClients; // Prologue
 
@@ -38,6 +49,21 @@ int saisie(client **pdonneesClients) {
 	return i;
 }
 
+
+/****************************************************************************/
+/*	fonction : recherche()                                              */
+/*	Effectue une recherche dans la base de clients                      */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- nom : Nom de famille du client recherché (char *)         */
+/*		- prenom : Prénom du client recherché (char *)              */
+/*		- donneesClients : Tableau contenant les clients (client *) */
+/*		- nbClients : Nombre total de clients (int)                 */
+/*	Sorties :                                                           */
+/*		- i : Identifiant du client recherché dans le tableau, ou   */
+/*			si le client n'existe pas (int)                     */
+/****************************************************************************/
+
 int recherche(char *nom, char *prenom, client *donneesClients, int nbClients) {
 	int i = 0;
 
@@ -51,6 +77,19 @@ int recherche(char *nom, char *prenom, client *donneesClients, int nbClients) {
 	return -1; // Si le client n'est pas trouvé, on renvoie un code d'erreur
 }
 
+
+/****************************************************************************/
+/*	fonction : affichage()                                              */
+/*	Affiche le résultat d'une recherche                                 */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- emetteur : Identifiant de l'emetteur du virement (int)    */
+/*		- destinataire : identifiant du recepteur du virement (int) */
+/*		- montant : Somme virée (double)			    */
+/*		- donneesClients : Tableau contenant les clients (client *) */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
+
 void affichage(int id, client *donneesClients) {
 	if(id >= 0) { // Si l'id est correct, affichage des informations
 		printf("\nPrenom : %s\nNom : %s\nSolde : %.2lf\n\n", donneesClients[id].prenom, donneesClients[id].nom, donneesClients[id].solde); 
@@ -62,7 +101,19 @@ void affichage(int id, client *donneesClients) {
 	}
 }
 
-void retrait(int id, float montant, client *donneesClients) {
+
+/****************************************************************************/
+/*	fonction : retrait()                                                */
+/*	Effectue un retrait sur le compte d'un utilisateur                  */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- id : Identifiant de l'emetteur du virement (int)          */
+/*		- montant : Somme virée (double)			    */
+/*		- donneesClients : Tableau contenant les clients (client *) */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
+
+void retrait(int id, double montant, client *donneesClients) {
 	if(id >= 0) {
 		if(donneesClients[id].solde >= montant) {
 			donneesClients[id].solde -= montant;
@@ -79,7 +130,20 @@ void retrait(int id, float montant, client *donneesClients) {
 	}
 }
 
-void virement(int emetteur, int destinataire, float montant, client *donneesClients) {
+
+/****************************************************************************/
+/*	fonction : virement()                                               */
+/*	Effectue une transaction financière entre deux utilisateurs         */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- emetteur : Identifiant de l'emetteur du virement (int)    */
+/*		- destinataire : identifiant du recepteur du virement (int) */
+/*		- montant : Somme virée (double)			    */
+/*		- donneesClients : Tableau contenant les clients (client *) */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
+
+void virement(int emetteur, int destinataire, double montant, client *donneesClients) {
 	if(emetteur >= 0 && destinataire >= 0) {
 		if(emetteur != destinataire) {
 			if(donneesClients[emetteur].solde >= montant) {

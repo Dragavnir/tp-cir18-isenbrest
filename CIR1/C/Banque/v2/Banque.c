@@ -9,7 +9,7 @@ int main() {
 	int destinataire; // Variables utilisées pour virement()
 	double montant; // Utilisé pour virement() et retrait()
 	char nomSaisi[LG_MAX+2];
-	char prenomSaisi[LG_MAX+2]; // Variables servant à l'appel de recherche();
+	char prenomSaisi[LG_MAX+2]; // Variables utilisées pour recherche();
 
 	printf("\nBienvenue dans notre banque.\n");
 
