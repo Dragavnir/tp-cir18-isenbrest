@@ -36,7 +36,7 @@ int saisie_ajoutQ(element **pqueue) {
 	}
 	*pqueue = queue; // Epilogue
 
-	return donnee;
+	return donnee; // On renvoie la donnée rentrée pour pouvoir la tester dans la boucle (et décider si cette dernière s'arrête ou non)
 }
 
 void libere_liste(element *tete) {
