@@ -5,7 +5,7 @@ int main() {
 	element *queue = NULL;
 	int donnee;
 
-	while(1) {
+	/*while(1) {
 		saisie_ajoutT(&tete);
 		if(tete->suiv == NULL) {
 			queue = tete;
@@ -23,6 +23,14 @@ int main() {
 		if(donnee == -1) {
 			break;
 		}
+	}
+
+	parcours(tete);*/
+
+	tete = saisie_insere(tete);
+
+	if(!tete) {
+		printf("\nloltnul\n\n");
 	}
 
 	parcours(tete);
