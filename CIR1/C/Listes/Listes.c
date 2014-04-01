@@ -5,7 +5,13 @@ int main() {
 	element *queue = NULL;
 	int donnee;
 
-	/*while(1) {
+
+	/****************************************************/
+	/*  A decommenter pour utiliser saisie_ajoutT() et  */
+	/*  saisie_ajoutQ()                                 */
+	/****************************************************
+
+	while(1) {
 		saisie_ajoutT(&tete);
 		if(tete->suiv == NULL) {
 			queue = tete;
@@ -25,7 +31,7 @@ int main() {
 		}
 	}
 
-	parcours(tete);*/
+	parcours(tete); */
 
 	tete = saisie_insere(tete);
 

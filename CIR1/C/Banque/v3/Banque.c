@@ -10,6 +10,8 @@ int main() {
 	double montant; // Utilisé pour virement() et retrait()
 	char nomSaisi[LG_MAX+2];
 	char prenomSaisi[LG_MAX+2]; // Variables utilisées pour recherche();
+	FILE *fp = NULL;
+	struct stat stats;
 
 	printf("\nBienvenue dans notre banque.\n");
 
@@ -19,7 +21,9 @@ int main() {
 			"\t2 : Chercher un client et afficher son solde\n"
 			"\t3 : Effectuer un retrait\n"
 			"\t4 : Effectuer un virement entre deux clients\n"
-			"\t5 : Quitter le programme\n"
+			"\t5 : Enregistrer la liste des clients\n"
+			"\t6 : Charger une liste sauvée dans un fichier\n"
+			"\t7 : Quitter le programme\n"
 			"\nVotre sélection : ");
 		scanf("%d", &method);
 		getchar();
@@ -136,7 +140,55 @@ int main() {
 					printf("\nIl n'y a pas assez de clients, merci de saisir au moins deux clients.\n\n");
 				}
 				break;
-			case 5: // L'utilisateur souhaite quitter le programme
+			case 5: // L'utilisateur souhaite enregistrer les clients
+				if(nbClients > 0) {
+					printf("\nSaisir le nom du fichier (en cas de fichier déjà existant, les données seront rajoutées à la fin du fichier) : ");
+					fgets(nomSaisi, LG_MAX, stdin);
+					nomSaisi[strlen(nomSaisi)-1] = '\0';
+
+					fp = fopen(nomSaisi, "a");
+
+					if(!fp) {
+						printf("\nErreur : Impossible de créer le fichier.\n");
+						break;
+					}
+
+					fwrite(donneesClients, sizeof(client), 
+								nbClients, fp);
+
+					close(fp);
+
+					printf("\nFichier écrit !\n");
+				}
+				else {
+					printf("\nMerci d'entrer au moins un client !\n");
+				}
+				break;
+			case 6: // L'utilisateur charge une liste de clients
+				free(donneesClients);
+
+				printf("\nMerci d'entrer le nom du fichier : ");
+				fgets(nomSaisi, LG_MAX, stdin);
+				nomSaisi[strlen(nomSaisi)-1] = '\0';
+
+				if(stat(nomSaisi, &stats) != 0) {
+					printf("\nErreur : Le fichier n'existe pas.\n\n");
+					break;
+				}
+
+				nbClients = (int)((int)stats.st_size/sizeof(client));
+
+				fp = fopen(nomSaisi, "r");
+				donneesClients = calloc(nbClients, sizeof(client));
+
+				fread(donneesClients, sizeof(client), nbClients, fp);
+
+				fclose(fp);
+
+				printf("\nFichier chargé !\n\n");
+
+				break;
+			case 7: // L'utilisateur souhaite quitter le programme
 				printf("\nAu revoir !\n\n");
 				free(donneesClients);
 				return EXIT_SUCCESS;

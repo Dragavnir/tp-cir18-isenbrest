@@ -1,5 +1,14 @@
 #include "Listes.h"
 
+/****************************************************************************/
+/*	fonction : saisie_ajoutT()                                          */
+/*	Ajoute en tête de liste toute valeur rentrée par l'utilisateur      */
+/*                                                                          */
+/*      Entrees/Sorties :                                                   */
+/*		- ptete : Pointeur sur la tête de la liste (element **)     */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
+
 void saisie_ajoutT(element **ptete) {
 	element *tete = *ptete; // Prologue
 
@@ -14,6 +23,15 @@ void saisie_ajoutT(element **ptete) {
 	*ptete = tete; // Epilogue
 }
 
+/****************************************************************************/
+/*	fonction : parcours()                                               */
+/*	Parcourt la liste en partant de la tête et affiche chaque valeur    */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- tete : Adresse de la tête de la liste (element *)         */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
+
 void parcours(element *tete) {
 	element *adr_temp = tete;
 	while(adr_temp) {
@@ -21,6 +39,16 @@ void parcours(element *tete) {
 		adr_temp = adr_temp->suiv;
 	}
 }
+
+/****************************************************************************/
+/*	fonction : saisie_ajoutQ()                                          */
+/*	Ajoute en queue les valeurs saisies par l'utilisateur               */
+/*                                                                          */
+/*      Entrees/Sorties :                                                   */
+/*		- pqueue : Pointeur sur la queue de la liste (element**)    */
+/*	Sorties :                                                           */
+/*		- donnee : Valeur saisie par l'utilisateur                  */
+/****************************************************************************/
 
 int saisie_ajoutQ(element **pqueue) {
 	element *queue = *pqueue; // Prologue
@@ -39,12 +67,23 @@ int saisie_ajoutQ(element **pqueue) {
 	return donnee; // On renvoie la donnée rentrée pour pouvoir la tester dans la boucle (et décider si cette dernière s'arrête ou non)
 }
 
+/****************************************************************************/
+/*	fonction : saisie_insere()                                          */
+/*	Insere dans l'ordre decroissant les valeurs saisies par             */
+/*		l'utilisateur                                               */
+/*                                                                          */
+/*      Entrees :                                                           */
+/*		- tete : Adresse de la tête de la liste (element *)         */
+/*	Sorties :                                                           */
+/*		- tete : Adresse de la tête de la liste (element *)         */
+/****************************************************************************/
+
 element *saisie_insere(element *tete) {
 	element *temp = NULL;
 	element *prec = NULL;
 	element *nouveau = NULL;
 	int donnee;
-
+	
 	while(1) {
 		printf("Rentrez une valeur : ");
 		scanf("%d", &donnee);
@@ -53,8 +92,9 @@ element *saisie_insere(element *tete) {
 			break;
 		}
 
-		nouveau = realloc(nouveau, sizeof(element));
+		nouveau = malloc(sizeof(element));
 		nouveau->donnee = donnee;
+		nouveau->suiv = NULL;
 
 		if(!tete) { // Premier element de la liste
 			tete = nouveau;
@@ -64,32 +104,38 @@ element *saisie_insere(element *tete) {
 		else {
 			temp = tete;
 			if(temp->donnee < nouveau->donnee) {
-				printf("0\n");
 				// Element à mettre en tête
 				nouveau->suiv = tete;
 				tete = nouveau;
 			}
 			else {
-				printf("1\n");fflush(stdout);
+				prec = temp;
 				while(temp) {
-					printf("2\n");fflush(stdout);
-					prec = temp;
-					temp = temp->suiv;
 					if(prec->donnee > nouveau->donnee &&
 						temp->donnee < nouveau->donnee) {
-						printf("3\n");fflush(stdout);
 						prec->suiv = nouveau;
 						nouveau->suiv = temp;
 					}
+					prec = temp;
+					temp = temp->suiv;
 				}
 				if(!temp && prec->donnee > nouveau->donnee) {
-					printf("4\n");fflush(stdout);
 					prec->suiv = nouveau;
 				}
 			}
 		}
 	}
+	return tete;
 }
+
+/****************************************************************************/
+/*	fonction : libere_liste()                                           */
+/*	Libère tous les éléments de la liste (pas de fuite mémoire)         */
+/*                                                                          */
+/*      Entrees/Sorties :                                                   */
+/*		- tete : tete de la liste (element *)                       */
+/*	Sorties : Aucune                                                    */
+/****************************************************************************/
 
 void libere_liste(element *tete) {
 	element *suivant = NULL;
