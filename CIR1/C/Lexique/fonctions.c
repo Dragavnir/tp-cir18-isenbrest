@@ -70,3 +70,22 @@ noeud *creation(char *nomfic) {
 
 	return lexique;
 }
+
+void parcoursGRD(noeud *racine) {
+	if(racine != NULL) {
+		parcoursGRD(racine->gauche);
+
+		printf("%s -> %s\n", racine->francais, 
+				racine->anglais);
+
+		parcoursGRD(racine->droite);
+	}
+}
+
+int hauteur (noeud *racine)
+{
+	if (racine == NULL)
+		return 0;
+	else
+		return 1 + MAX(hauteur(racine->gauche), hauteur(racine->droite));
+}

@@ -28,14 +28,26 @@ void CSVToMail(FILE *src, FILE *dest) {
 			ligne = virgule+1;
 
 			guillemets = strchr(ligne, '"');
-			*guillemets = '\0';
+			if(guillemets != NULL) {
+				*guillemets = '\0';
 
-			ligne = guillemets+1;
+				ligne = guillemets+1;
 
-			guillemets = strchr(ligne, '"');
-			*guillemets = '\0';
+				guillemets = strchr(ligne, '"');
+				if(guillemets != NULL) {
+					*guillemets = '\0';
+				}
+			}
+			else {
+				virgule = strchr(ligne, ',');
+				if(virgule != NULL) {
+					*virgule = '\0';
+				}
+			}
 
-			fprintf(dest, "%s\n", ligne);
+			if(*ligne != '\0') {
+				fprintf(dest, "%s\n", ligne);
+			}
 		}
 		j++;
 		// j sert à passer la ligne d'en-tete

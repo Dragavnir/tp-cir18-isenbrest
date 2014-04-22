@@ -4,7 +4,8 @@
 #include <errno.h>
 #include <math.h>
 
-#define	LG_MAX 1000
+#define	LG_MAX 		1000
+#define MAX(a,b)	(((a)>(b))?(a):(b))
 
 struct noeud {
 	char *francais;
@@ -18,3 +19,4 @@ typedef struct noeud noeud;
 noeud *inserer(char *fr, char *en, noeud *racine);
 char *traduction(char *fr, noeud *racine);
 noeud *creation(char *nomfic);
+void parcoursGRD(noeud *racine);
