@@ -3,53 +3,60 @@
 void CSVToMail(FILE *src, FILE *dest) {
 	int i = 0;
 	int j = 0;
-	int breakable = 0;
 	char *ligne = calloc(LG_MAX, sizeof(char));
-	char *virgule = NULL; // Pointe à chaque virgule
-	char *guillemets = NULL; // Pointe aux guillemets à la fin de l'adresse
+	char *arobase = NULL;
+	char *delimiteur = NULL;
 
-	while(fgets(ligne,LG_MAX,src)) {
-		breakable = 0;
+	while(fgets(ligne, LG_MAX, src)) {
 		if(j > 0) {
-			for(i = 0; i < ITERANCES; i++) {
-				virgule = strchr(ligne, ',');
-				if(virgule == NULL) {
-					// Moins de 48 virgules dans la ligne
-					breakable = 1;
-				} else {
-					*virgule = ' ';
+			arobase = strchr(ligne, '@');
+			if(arobase) {
+				delimiteur = arobase;
+				while(delimiteur) {
+					if(*delimiteur == ',' || 
+						*delimiteur == '"') {
+						break;
+					}
+					if(*(delimiteur-1) != '\0') {
+						delimiteur--;
+					} else {
+						break;
+					}
 				}
-			}
 
-			if(breakable) {
-				break;
-			}
+				if(delimiteur) {
 
-			ligne = virgule+1;
+					*delimiteur = '\0';
 
-			guillemets = strchr(ligne, '"');
-			if(guillemets != NULL) {
-				*guillemets = '\0';
+					ligne = delimiteur+1;
 
-				ligne = guillemets+1;
+					delimiteur = strchr(ligne, '"');
 
-				guillemets = strchr(ligne, '"');
-				if(guillemets != NULL) {
-					*guillemets = '\0';
+					if(!delimiteur) {
+						delimiteur = strchr(ligne, ',');
+					}
+
+					*delimiteur = '\0';
+
+					fprintf(dest, "%s\n", ligne);
+					fflush(dest);
+
 				}
-			}
-			else {
-				virgule = strchr(ligne, ',');
-				if(virgule != NULL) {
-					*virgule = '\0';
-				}
-			}
-
-			if(*ligne != '\0') {
-				fprintf(dest, "%s\n", ligne);
 			}
 		}
 		j++;
 		// j sert à passer la ligne d'en-tete
 	}
+/*	if(ligne) {
+		printf("%p : %s\n", ligne, ligne);fflush(stdout);
+		free(ligne);
+	}
+	if(delimiteur) {
+		free(delimiteur);
+	}
+	if(arobase){
+		free(arobase);
+	} */
+// To be fixed
+
 }

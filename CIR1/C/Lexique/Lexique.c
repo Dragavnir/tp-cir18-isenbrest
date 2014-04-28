@@ -12,10 +12,11 @@ int main() {
 		fprintf(stderr, "La racine est nulle !\n");
 	}
 */
-	parcoursGRD(lexique);
-
+	parcoursGRD(lexique, affiche);
 
 	printf("\nHauteur : %d\n", hauteur(lexique));
+
+	parcoursGDR(lexique, libere);
 
 	return EXIT_SUCCESS;
 }
